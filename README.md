@@ -105,7 +105,7 @@ Please be incorporated into your CloudFormation.
       "Properties" : {
         "Code" : {
           "S3Bucket" : "file-repositories",
-          "S3Key" : "lambda/lambda-deploy-custom-resource-function/0.0.1.zip"
+          "S3Key" : "lambda/lambda-deploy-custom-resource-function/0.0.2.zip"
         },
         "Description" : "It will deploy the AWS Lambda of general-purpose Lambda Function.",
         "Handler" : "src/index.handler",

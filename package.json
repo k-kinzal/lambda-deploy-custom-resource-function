@@ -22,15 +22,15 @@
     "gulp-zip": "^3.0.2",
     "intelli-espower-loader": "^1.0.0",
     "istanbul": "^0.4.0",
-    "lambda-handler": "^0.2.5",
+    "lambda-handler": "^0.3.0",
     "mocha": "^2.3.3",
     "nock": "^2.18.2",
-    "power-assert": "^0.10.2",
+    "power-assert": "^1.2.0",
     "sinon": "^1.17.2"
   },
   "dependencies": {
     "aws-sdk": "^2.1.24",
-    "bluebird": "^2.9.24",
+    "bluebird": "^3.0.5",
     "jszip": "^2.5.0"
   }
 }

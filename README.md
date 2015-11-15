@@ -1,6 +1,6 @@
 # lambda-deploy-custom-resource-function
 
-[![Build Status](https://travis-ci.org/k-kinzal/lambda-deploy-custom-resource-function.svg?branch=develop)](https://travis-ci.org/k-kinzal/lambda-deploy-custom-resource-function)
+[![Build Status](https://travis-ci.org/k-kinzal/lambda-deploy-custom-resource-function.svg)](https://travis-ci.org/k-kinzal/lambda-deploy-custom-resource-function)
 [![Dependency Status](https://david-dm.org/k-kinzal/lambda-deploy-custom-resource-function.png?theme=shields.io)](https://david-dm.org/k-kinzal/lambda-deploy-custom-resource-function)
 [![devDependency Status](https://david-dm.org/k-kinzal/lambda-deploy-custom-resource-function/dev-status.png?theme=shields.io)](https://david-dm.org/k-kinzal/lambda-deploy-custom-resource-function#info=devDependencies)
 

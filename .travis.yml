@@ -12,25 +12,16 @@ script:
 after_success:
 - npm run archive
 deploy:
-  - provider: s3
-    access_key_id: AKIAJSHXGEZAYHQF3PBQ
-    secret_access_key:
-      secure: ZzmM30d9spcMUlCByohvOg4zBpX6rbB8HDlPG0DoERdL9Ky8luAUJ7WHTk5hbnQtNR/uRXkIbkDpboU02hEngfjQVhc4ZXbCVDHhi3e8tL6xalWhzYvWLoQQ7DWQspPJHlXoPkFyDodg5Aksqg/Z2ERPeW+C/5jZHaLbSzjEnVmWi/D1IXTvLce8dV/cMCbxdTweuXIYllE6TNaOC0CIlrV1SXNCduf+w46bXovOPhit6bjXy+a6Sptjepv4f3lDbzC057un4KhJ+TgHt1hWh1Z5FOT2mr3zjgaZzvd/OXyjZLJLKjtbXTViecaB2KO7sheYs+sySQbSX8i6t0h0Ze3veCBdFRsu2SqYXbisAKdlM2CEBKgk8wr/spYn204PeubNceJOj+VdQJUlVfapwt1ZNUmh8kH+msL0/YYG7aCJ4b2kyUHkKf5zO9DY0Wqhe4VwcAOwav25hHw2bg39B5fvnuMK/0H1s7TplWnKZkcX+MyzVRFx4oVOvcyqyM52JUsJGV1Wg57/B9DKvBwP/7OPWKfG664iE0Fl1GtSzY8oA1YwNh9IShfsZNdeS2cdqbDCGZbMMbIqFAsKwK5xId/DrAKsKav0KCZ63NsdJAk81qK+ImCi87A2bNeK/bgxqVqKHQrQetOUp9/fLfE2fVr9r7MpzseaR0A9/O5emII=
-    bucket: file-repositories
-    local-dir: dist
-    upload-dir: lambda/lambda-deploy-custom-resource-function
-    acl: public_read
-    skip_cleanup: true
-    on:
-      repo: k-kinzal/lambda-deploy-custom-resource-function
-      branch: master
-      tags: true
-  - provider: releases
-    api_key:
-      secure: OjFYADucZ8j9P4e1CX8LzFQnuAfxwoj4F/Io+3Jno2jlZ1ODZvtUIMdZq57RCboQYFeDQWoFu8N7L/Zv8/RLaqj1P05jWx6YK4o012n7oah3Lp8cU+zKNjfgrb0jMKvk0EIUolXBj1x95Q+b9iRWaEfWTD67Etlj4YJNVxUdQp4jFA+Nf0lr+9pPS8OTduJyzQv0bt3YHxZRD8EcmTF79YH3GcjMg9WdUmvW/+WXDPbGbPeXwJQTg0mqVqLyP0eAjySuxPkVuLf4KwzE5tR2FnURBRZo8/j3UUifQryGBa8YrEjCFvIOMJFA6M8exy+m1XEYSedx1DqoRq5lQRfD1o6sEr3OeM8QYm3emhiVtJtbihY9ormqFqjJPRnBt0K3fs6crOgkZlFfL5E+zTHis7vjxO+Hpfi677G4C3IEnRFq31NWrl0C+qO+SXRQn0UxFJ9VyeIm+ZZjAjVDNIP8kaqNZZZDf8oDCXdm9OIUV0ZnPdl+mSj2900EUG0dnTP9TtzVYAo/bwfeeCnInJyYA9q4/bQFLP7GMY3LcAIaYNikliNo6fNoshpKue68Xd7dRnYmM6uvaFx1BodAvLfYMuLtmBUOX7JFjXcdTsVR3peHoNW2vyENXY8cKdUP8KcVcBm8GHyW7MqXh1ua+6MBCXcxFC7NrPlnVs/ZrqCVkeM=
-    file: dist/*.zip
-    skip_cleanup: true
-    on:
-      repo: k-kinzal/lambda-deploy-custom-resource-function
-      branch: master
-      tags: true
+  provider: s3
+  access_key_id: AKIAJSHXGEZAYHQF3PBQ
+  secret_access_key:
+    secure: ZzmM30d9spcMUlCByohvOg4zBpX6rbB8HDlPG0DoERdL9Ky8luAUJ7WHTk5hbnQtNR/uRXkIbkDpboU02hEngfjQVhc4ZXbCVDHhi3e8tL6xalWhzYvWLoQQ7DWQspPJHlXoPkFyDodg5Aksqg/Z2ERPeW+C/5jZHaLbSzjEnVmWi/D1IXTvLce8dV/cMCbxdTweuXIYllE6TNaOC0CIlrV1SXNCduf+w46bXovOPhit6bjXy+a6Sptjepv4f3lDbzC057un4KhJ+TgHt1hWh1Z5FOT2mr3zjgaZzvd/OXyjZLJLKjtbXTViecaB2KO7sheYs+sySQbSX8i6t0h0Ze3veCBdFRsu2SqYXbisAKdlM2CEBKgk8wr/spYn204PeubNceJOj+VdQJUlVfapwt1ZNUmh8kH+msL0/YYG7aCJ4b2kyUHkKf5zO9DY0Wqhe4VwcAOwav25hHw2bg39B5fvnuMK/0H1s7TplWnKZkcX+MyzVRFx4oVOvcyqyM52JUsJGV1Wg57/B9DKvBwP/7OPWKfG664iE0Fl1GtSzY8oA1YwNh9IShfsZNdeS2cdqbDCGZbMMbIqFAsKwK5xId/DrAKsKav0KCZ63NsdJAk81qK+ImCi87A2bNeK/bgxqVqKHQrQetOUp9/fLfE2fVr9r7MpzseaR0A9/O5emII=
+  bucket: file-repositories
+  local-dir: dist
+  upload-dir: lambda/lambda-deploy-custom-resource-function
+  acl: public_read
+  skip_cleanup: true
+  on:
+    repo: k-kinzal/lambda-deploy-custom-resource-function
+    branch: master
+    tags: true

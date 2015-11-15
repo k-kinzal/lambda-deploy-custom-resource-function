@@ -1,0 +1,25 @@
+{
+  "RequestType": "Delete",
+  "ServiceToken": "arn:aws:lambda:us-east-1:000000000000:function:deploy-function",
+  "ResponseURL": "https://cloudformation-custom-resource-response-useast1.s3.amazonaws.com/arn",
+  "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/stack/0000000-0000-0000-0000-000000000000",
+  "RequestId": "0000000-0000-0000-0000-000000000000",
+  "LogicalResourceId": "LambdaCustomResource",
+  "ResourceType": "AWS::CloudFormation::CustomResource",
+  "ResourceProperties":  {
+    "ServiceToken": "arn:aws:lambda:us-east-1:000000000000:function:deploy-function",
+    "URL": "https://example.com/",
+    "FunctionName": "example-function",
+    "Handler": "src/index.handler",
+    "Role": "arn:aws:iam::000000000000:role/lambda_basic_execution",
+    "Runtime": "nodejs",
+    "Description": "Example function",
+    "MemorySize": 128,
+    "Publish": true,
+    "Timeout": 3,
+    "Config": {
+      "key1": 1,
+      "key2": "str"
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "lambda-deploy-custom-resource-function",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "It will deploy the AWS Lambda of general-purpose Lambda Function.",
   "author": "k-kinzal",
   "license": "MIT",

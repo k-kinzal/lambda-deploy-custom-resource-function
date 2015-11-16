@@ -31,6 +31,7 @@
   "dependencies": {
     "aws-sdk": "^2.1.24",
     "bluebird": "^3.0.5",
-    "jszip": "^2.5.0"
+    "jszip": "^2.5.0",
+    "request": "^2.65.0"
   }
 }

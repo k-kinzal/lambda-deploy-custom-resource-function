@@ -4,27 +4,24 @@ var AWS      = require('aws-sdk');
 var JSZip    = require('jszip');
 var Promise  = require('bluebird');
 var path     = require('path');
+var request  = require('request');
 
 var lambda = Promise.promisifyAll(new AWS.Lambda(), {'suffix': 'Promise'});
 
 module.exports = function(properties) {
   return Promise.resolve(new JSZip()).then(function(archive) {
     return (new Promise(function(resolve, reject) {
-      var http = properties.URL.match(/^https/) ? require('https') : require('http');
-      var req = http.request(properties.URL, function(res) {
-        var data = [];
-        res.setEncoding('binary');
-        res.on('data', function (chunk) {
-          data.push(new Buffer(chunk, 'binary'));
-        });
-        res.on('error', function (err) {
+      var options = {
+        url: properties.URL,
+        encoding: null
+      };
+      request.get(options, function(err, response) {
+        if (err) {
           reject(err);
-        });
-        res.on('end', function () {
-          resolve(Buffer.concat(data));
-        });
+        } else {
+          resolve(response.body);
+        }
       });
-      req.end();
     })).then(function(buffer) {
       return archive.load(buffer);
     });
